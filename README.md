@@ -89,12 +89,12 @@ plugin_manager install_bundle /path/to/dsh-plugin-system-notify
 | 平台 | 状态 |
 | --- | --- |
 | macOS | ✅ 已实测（归属 `com.deepseek.dsh`） |
-| Windows | ⚠️ 理论可用，未实测 |
+| Windows | ✅ 已实测 |
 | Linux | ⚠️ 理论可用，未实测 |
 
 插件本身不含任何平台相关代码（无 `osascript` / PowerShell / `notify-send`），走的是浏览器标准的 Web Notification API，由各平台的应用运行时翻译成本地通知。
 
-Windows 上唯一的前提是应用有注册过的 **AppUserModelID**（由安装器写入开始菜单快捷方式）——如果 Toast 不弹，先在「设置 → 系统 → 通知」里看列表中有没有出现 `DeepSeek Harness`。另外专注助手/勿扰模式会拦截 Toast。
+Windows 上如果 Toast 不弹，先在「设置 → 系统 → 通知」里看列表中有没有出现 `DeepSeek Harness`（这取决于安装器是否注册了 **AppUserModelID**）；另外专注助手/勿扰模式会拦截 Toast。
 
 ## 限制
 
