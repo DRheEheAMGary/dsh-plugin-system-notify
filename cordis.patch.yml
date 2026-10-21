@@ -1,0 +1,6 @@
+# dsh-plugin-system-notify bundle: mount the Host half that registers the
+# `system_notify` agent tool and delivers a native OS notification.
+- insert:
+    - id: system-notify
+      name: dsh-plugin-system-notify
+      config: {}

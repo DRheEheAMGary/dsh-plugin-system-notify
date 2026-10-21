@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "System Notifications",
+    "description": "Let the agent send a native desktop notification that appears even while the window is in the background, raised by the Harness itself."
+  }
+}
