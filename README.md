@@ -7,18 +7,6 @@ AI 调用 system_notify  →  🔔 DeepSeek Harness
                           任务完成了
 ```
 
-## 为什么由 DSH 本体发出
-
-通知的归属者是**发起它的应用**，不是它的父进程。macOS 上实测：
-
-| 做法 | 归属 |
-| --- | --- |
-| `osascript display notification` | 脚本编辑器 ❌ |
-| 未签名的 helper `.app` | 通知被系统丢弃 ❌ |
-| **页面里的 Web Notification API** | **承载页面的应用** ✅ |
-
-所以插件不走脚本路线：Host 侧只负责「要发通知」，真正弹出的是渲染 DSH 页面的那个进程。实测归属 `com.deepseek.dsh`。
-
 ## 架构
 
 双半部，靠一条长轮询路由协作：
